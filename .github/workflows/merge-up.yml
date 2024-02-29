@@ -1,0 +1,27 @@
+name: Merge up
+
+on:
+  push:
+    branches: ~
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge-up:
+    name: Create merge up pull request
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Create pull request
+        id: create-pull-request
+        uses: alcaeus/automatic-merge-up-action@create-pull-request
+        with:
+          ref: ${{ github.ref_name }}
+          branchNamePattern: 'v<major>.<minor>'
+          fallbackBranch: 'main'
