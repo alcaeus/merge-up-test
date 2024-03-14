@@ -2,7 +2,8 @@ name: Merge up
 
 on:
   push:
-    branches: ~
+    branches:
+      - v*.*
 
 permissions:
   contents: write
