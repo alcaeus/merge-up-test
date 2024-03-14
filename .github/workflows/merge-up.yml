@@ -5,12 +5,8 @@ on:
     branches:
       - v*.*
 
-permissions:
-  contents: write
-  pull-requests: write
-
 env:
-  GH_TOKEN: ${{ github.token }}
+  GH_TOKEN: ${{ secrets.MERGE_UP_TOKEN }}
 
 jobs:
   merge-up:
