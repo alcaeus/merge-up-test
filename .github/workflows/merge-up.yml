@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.MERGE_UP_TOKEN }}
 
       - name: Create pull request
         id: create-pull-request
