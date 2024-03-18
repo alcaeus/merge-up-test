@@ -2,14 +2,11 @@ name: Merge up
 
 on:
   push:
-    branches: ~
-
-permissions:
-  contents: write
-  pull-requests: write
+    branches:
+      - v*.*
 
 env:
-  GH_TOKEN: ${{ github.token }}
+  GH_TOKEN: ${{ secrets.MERGE_UP_TOKEN }}
 
 jobs:
   merge-up:
@@ -22,6 +19,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.MERGE_UP_TOKEN }}
 
       - name: Create pull request
         id: create-pull-request
