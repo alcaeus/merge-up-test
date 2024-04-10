@@ -28,3 +28,4 @@ jobs:
           ref: ${{ github.ref_name }}
           branchNamePattern: 'v<major>.<minor>'
           fallbackBranch: 'main'
+          enableAutoMerge: true
