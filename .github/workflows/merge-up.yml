@@ -23,7 +23,7 @@ jobs:
 
       - name: Create pull request
         id: create-pull-request
-        uses: alcaeus/automatic-merge-up-action@add-pr-body
+        uses: alcaeus/automatic-merge-up-action@enable-auto-merge
         with:
           ref: ${{ github.ref_name }}
           branchNamePattern: 'v<major>.<minor>'
